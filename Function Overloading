@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+
+int vol(int);
+double vol(double,int);
+long vol(long,int,int);
+int main()
+{
+    cout<<vol(10)<<endl;
+    cout<<vol(2.5,8)<<endl;
+    cout<<vol(100L,75,15)<<endl;
+    
+}
+
+int vol(int s)
+{
+    return(s*s*s);
+}
+double vol(double r,int h){
+    return(3.14*r*r*h);
+}
+long vol(long l ,int b ,int h)
+{
+    return(l*b*h);
+}
