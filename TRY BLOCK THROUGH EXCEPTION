@@ -1,0 +1,24 @@
+#include<iostream>
+
+using namespace std;
+int main(){
+cout <<"a and b:\n";
+cin>>a;
+cin>>b;
+int x=a-b;
+try{
+if(x!=)
+{
+cout<<"Result="<<a/x<<"\n";
+}
+else
+{
+throw(x);
+}
+catch(int i)
+{
+cout<<"exception caught:x="<<x<<"\n";
+}
+cout<<"END";
+return 0;
+}
