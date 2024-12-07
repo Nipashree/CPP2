@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cstring> // For strcpy function
+
+using namespace std;
+
+struct employee
+{
+    char name[25];
+    int age;
+    float sal;
+} e;
+
+int main()
+{
+    strcpy(e.name, "Smith"); // Corrected quotes
+    e.age = 25;             // Corrected member access
+    cout << e.name << endl << e.age; // Corrected output statement
+    return 0;               // Added return statement
+}
