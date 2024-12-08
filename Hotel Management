@@ -1,0 +1,23 @@
++-----------------------------+
+|          Main Program       |
+| (Handles User Interaction)  |
++-----------------------------+
+             |
+             v
++-----------------------------+
+|         Hotel Class         |
+| - Contains Room Array       |
+| - checkInGuest()            |
+| - checkOutGuest()           |
+| - displayStatus()           |
++-----------------------------+
+             |
++-----------------------------+
+|          Room Class         |
+| - Properties: roomNumber,   |
+|   occupancy                 |
+| - Methods:                  |
+|   getRoomNumber(),          |
+|   isOccupied(),             |
+|   checkIn(), checkOut()     |
++-----------------------------+
