@@ -1,0 +1,26 @@
++-------------------------------+
+|      StaffManagementSystem    |
+| - staffMembers[3]: Array of 3 |
+|   Staff objects               |
+| Methods:                      |
+| 1. displayStaff()             |
+| 2. findStaffById(id)          |
++-------------------------------+
+            |
+            v
++-------------------------------+
+|            Staff              |
+| - name, id, subject           |
+| Methods:                      |
+| 1. Constructor to initialize  |
+| 2. display(): Display details |
++-------------------------------+
+
+            Main Program:
+                |
+                v
+       +--------------------+
+       | Create SMS Object  |
+       | Display Staff List |
+       | Find Staff by ID   |
+       +--------------------+
