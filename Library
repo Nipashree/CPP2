@@ -1,0 +1,26 @@
++--------------------------------+
+|            Library             |
+| - books[] (Array of Book)      |
+| - bookCount                    |
+| Methods:                       |
+| 1. addBook(id, title, author)  |
+| 2. displayBooks()              |
++--------------------------------+
+            |
+            v
++--------------------------------+
+|             Book               |
+| - id, title, author            |
+| Methods:                       |
+| 1. addBook(bookId, title, ...) |
+| 2. displayBook()               |
++--------------------------------+
+
+            Main Program:
+                |
+                v
+       +--------------------+
+       |  Create Library    |
+       | Add Books (Fixed)  |
+       | Display Books      |
+       +--------------------+
