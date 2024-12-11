@@ -1,0 +1,94 @@
+//Staff Management System
+//If it is asked to add staff
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+const int MAX_STAFF = 100; // Maximum number of staff members
+
+// Staff class
+class Staff {
+public:
+    int staffID;
+    string name;
+    string subject;
+
+    Staff() : staffID(0), name(""), subject("") {}
+
+    Staff(int id, string n, string s) : staffID(id), name(n), subject(s) {}
+
+    void displayStaffDetails() {
+        cout << "Staff ID: " << staffID << ", Name: " << name << ", Subject: " << subject << endl;
+    }
+};
+
+// StaffManagement class
+class StaffManagement {
+private:
+    Staff staffList[MAX_STAFF]; // Array of staff members
+    int staffCount; // Current count of staff members
+
+public:
+    StaffManagement() : staffCount(0) {}
+
+    void addStaff(int id, string name, string subject) {
+        if (staffCount < MAX_STAFF) {
+            staffList[staffCount] = Staff(id, name, subject);
+            staffCount++;
+            cout << "Staff added successfully." << endl;
+        } else {
+            cout << "Staff list is full, cannot add more staff members." << endl;
+        }
+    }
+
+    void displayAllStaff() {
+        if (staffCount == 0) {
+            cout << "No staff members available." << endl;
+        } else {
+            for (int i = 0; i < staffCount; i++) {
+                staffList[i].displayStaffDetails();
+            }
+        }
+    }
+};
+
+int main() {
+    StaffManagement sm;
+    int choice, id;
+    string name, subject;
+
+    while (true) {
+        cout << "Staff Management System" << endl;
+        cout << "1. Add Staff" << endl;
+        cout << "2. Display All Staff" << endl;
+        cout << "3. Exit" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                cout << "Enter Staff ID: ";
+                cin >> id;
+                cin.ignore(); // Clear the input buffer
+                cout << "Enter Staff Name: ";
+                getline(cin, name);
+                cout << "Enter Subject: ";
+                getline(cin, subject);
+                sm.addStaff(id, name, subject);
+                break;
+            case 2:
+                sm.displayAllStaff();
+                break;
+            case 3:
+                cout << "Exiting the system. Goodbye!" << endl;
+                return 0;
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
