@@ -1,0 +1,69 @@
+//Staff Management System
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Class representing a staff member
+class Staff {
+public:
+    string name;
+    int id;
+    string subject;
+
+    // Constructor
+    Staff(string n, int i, string s) : name(n), id(i), subject(s) {}
+
+    // Function to display staff details
+    void display() const {
+        cout << "ID: " << id << ", Name: " << name << ", Subject: " << subject << endl;
+    }
+};
+
+// Class to manage the staff
+class StaffManagementSystem {
+public:
+    Staff staffMembers[3]; // Array for 3 staff members
+
+    // Constructor to initialize staff members
+    StaffManagementSystem() : staffMembers{
+        Staff("Alice Smith", 101, "Mathematics"),
+        Staff("Bob Johnson", 102, "Physics"),
+        Staff("Charlie Brown", 103, "Chemistry")
+    } {}
+
+    // Function to display all staff members
+    void displayStaff() const {
+        cout << "Staff Members:" << endl;
+        for (const auto& staff : staffMembers) {
+            staff.display();
+        }
+    }
+
+    // Function to find a staff member by ID
+    void findStaffById(int id) const {
+        for (const auto& staff : staffMembers) {
+            if (staff.id == id) {
+                staff.display();
+                return;
+            }
+        }
+        cout << "Staff member with ID " << id << " not found." << endl;
+    }
+};
+
+int main() {
+    StaffManagementSystem sms;
+
+    // Display all staff members
+    sms.displayStaff();
+
+    // Find a staff member by ID
+    int idToFind;
+    cout << "Enter staff ID to find: ";
+    cin >> idToFind;
+    sms.findStaffById(idToFind);
+
+    return 0;
+}
