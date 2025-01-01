@@ -1,0 +1,11 @@
+#include <queue>
+struct Data {
+    int timestamp;
+    int priority;
+};
+struct CompareData {
+    bool operator()(const Data& a, const Data& b) {
+        return a.priority < b.priority; // Max-heap
+    }
+};
+std::priority_queue<Data, std::vector<Data>, CompareData> pq;
