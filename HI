@@ -1,0 +1,39 @@
+    // Base classes
+    class A {
+    public:
+        void methodA() {
+            cout << "Method A" << endl;
+        }
+    };
+
+    class B {
+    public:
+        void methodB() {
+            cout << "Method B" << endl;
+        }
+    };
+
+    // Derived class inheriting from A and B (Multiple Inheritance)
+    class C : public A, public B {
+    public:
+        void methodC() {
+            cout << "Method C" << endl;
+        }
+    };
+
+    // Derived class inheriting from C (Multilevel Inheritance)
+    class D : public C {
+    public:
+        void methodD() {
+            cout << "Method D" << endl;
+        }
+    };
+
+    int main() {
+        D obj;
+        obj.methodA(); // Accessing method from A
+        obj.methodB(); // Accessing method from B
+        obj.methodC(); // Accessing method from C
+        obj.methodD(); // Accessing method from D
+        return 0;
+    }
